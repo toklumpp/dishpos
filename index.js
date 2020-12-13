@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
     compassDisc.style.webkitTransform = `rotate(${dir}deg)`;
     compassDisc.style.MozTransform = `rotate(${dir}deg)`;
     const compassPointer = document.getElementById('pointer');
-    compassPointer.style.transform = `rotate(document.getElementById('req_azimuth').innerHTML)`;
-    compassPointer.style.webkitTransform = `rotate(document.getElementById('req_azimuth').innerHTML)`;
-    compassPointer.style.MozTransform = `rotate(document.getElementById('req_azimuth').innerHTML)`;
+    compassPointer.style.transform = `rotate(${dir}deg)`;
+    compassPointer.style.webkitTransform = `rotate(${dir}deg)`;
+    compassPointer.style.MozTransform = `rotate(${dir}deg)`;
   }
 
 });
