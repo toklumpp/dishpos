@@ -23,10 +23,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
     compassDisc.style.transform = `rotate(${dir}deg)`;
     compassDisc.style.webkitTransform = `rotate(${dir}deg)`;
     compassDisc.style.MozTransform = `rotate(${dir}deg)`;
-    const compassPointer = document.getElementById('pointer');
-    compassPointer.style.transform = `rotate(${dir}deg)`;
-    compassPointer.style.webkitTransform = `rotate(${dir}deg)`;
-    compassPointer.style.MozTransform = `rotate(${dir}deg)`;
   }
 
 });
@@ -48,4 +44,10 @@ function recalculate() {
 	}
 	document.getElementById('req_elevation').innerHTML = (elevation*180/Math.PI)
 	document.getElementById('req_azimuth').innerHTML = (azimuth*180/Math.PI)
+	
+    const compassPointer = document.getElementById('pointer');
+    
+    compassPointer.style.transform = `rotate(${azimuth*180/Math.PI}deg)`;
+    compassPointer.style.webkitTransform = `rotate(${azimuth*180/Math.PI}deg)`;
+    compassPointer.style.MozTransform = `rotate(${azimuth*180/Math.PI}deg)`;
 }
