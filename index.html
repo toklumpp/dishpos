@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script type="text/javascript" src="index.js"></script>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<h1>Satellite Positioner</h1>
+<div class="compass">
+  <div class="arrow"></div>
+  <div class="disc" id="compassDiscImg"></div>
+</div>
+
+<div class="orientation-data">
+  
+      <form>
+      	<label for="satpos">Satellite position (+ for E, - for W):</label>
+      <input
+        type='text' id='satpos' name='satpos'
+        onChange="recalculate()"
+      /><br />
+      	<label for="longitude">Longitude:</label>
+      <input
+        type='text' id='longitude' name='longitude'
+        onChange="recalculate()"
+      /><br />
+      <label for="latitude">Latitude:</label>
+      <input
+        type='text' id='latitude' name='latitude'
+        onChange="recalculate()"
+      /><br />
+      	Required Azimuth: <span id="req_elevation"></span><br />
+ 			 Actual Elevation: <span id="act_elevation"></span><br />
+      	Required Elevation: <span id="req_elevation"></span><br />
+  			Actual Azimuth: <span id="act_azimuth"></span><br />
+      </form>
+</div>
+<div id="notice"></div>
+
+</body>
+</html>
