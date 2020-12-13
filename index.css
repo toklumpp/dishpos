@@ -1,21 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Wallpoet');
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
 
-body {
-  margin: 30px;
-  background: rgb(15, 15, 15);
-  color: rgb(134, 254, 25);
-  text-shadow: 0 0 rgba(134, 254, 25, 0.5);
-  font-family: 'Wallpoet', cursive;
-  text-align: center;
-}
-
-.compass {
+.diagram {
   position: relative;
   width: 260px;
   height: 260px;
@@ -27,7 +12,7 @@ body {
   overflow: hidden;
 }
 
-.compass .disc {
+.diagram .circle {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -39,7 +24,7 @@ body {
   background-size: 100%;
 }
 
-.compass .arrow {
+.diagram .pointer {
   position: absolute;
   top: 20px;
   left: 20px;

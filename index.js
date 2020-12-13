@@ -39,6 +39,9 @@ function recalculate() {
 	var tan_elevation = (cos_angle-0.151)/Math.sin(angle)
 	var elevation = Math.atan(tan_elevation)
 	var azimuth = Math.acos(cos_azimuth)
+	if(difference > 0) {
+		 azimuth = 2 * Math.PI - azimuth
+	}
 	document.getElementById('req_elevation').innerHTML = (elevation*180/Math.PI)
 	document.getElementById('req_azimuth').innerHTML = (azimuth*180/Math.PI)
 }
