@@ -17,14 +17,28 @@ document.addEventListener('DOMContentLoaded', function(event) {
   };
 
   function deviceOrientationHandler(tiltLR, tiltFB, dir) {
-    document.getElementById('tiltLR').innerHTML = Math.ceil(tiltLR);
-    document.getElementById('tiltFB').innerHTML = Math.ceil(tiltFB);
-    document.getElementById('direction').innerHTML = Math.ceil(dir);
+    document.getElementById('act_azimuth').innerHTML = Math.ceil(dir);
     // Rotate the disc of the compass. - CSS transform
-    const compassDisc = document.getElementById('compassDiscImg');
+    const compassDisc = document.getElementById('disc');
     compassDisc.style.transform = `rotate(${dir}deg)`;
     compassDisc.style.webkitTransform = `rotate(${dir}deg)`;
     compassDisc.style.MozTransform = `rotate(${dir}deg)`;
   }
 
 });
+
+function recalculate() {
+	var satpos = ((document.getElementById('satpos').value)*Math.PI/180)
+	var longitude = ((document.getElementById('longitude').value)*Math.PI/180)
+	var latitude = ((document.getElementById('latitude').value)*Math.PI/180)
+	var difference = longitude - satpos
+	var cos_angle = Math.cos(latitude) * Math.cos(difference)
+	document.getElementById('act_elevation').innerHTML = cos_angle
+	var angle = Math.acos(cos_angle);
+	var cos_azimuth = -Math.tan(latitude)/Math.tan(angle)
+	var tan_elevation = (cos_angle-0.151)/Math.sin(angle)
+	var elevation = Math.atan(tan_elevation)
+	var azimuth = Math.acos(cos_azimuth)
+	document.getElementById('req_elevation').innerHTML = (elevation*180/Math.PI)
+	document.getElementById('req_azimuth').innerHTML = (azimuth*180/Math.PI)
+}
