@@ -19,10 +19,14 @@ document.addEventListener('DOMContentLoaded', function(event) {
   function deviceOrientationHandler(tiltLR, tiltFB, dir) {
     document.getElementById('act_azimuth').innerHTML = Math.ceil(dir);
     // Rotate the disc of the compass. - CSS transform
-    const compassDisc = document.getElementById('disc');
+    const compassDisc = document.getElementById('circle');
     compassDisc.style.transform = `rotate(${dir}deg)`;
     compassDisc.style.webkitTransform = `rotate(${dir}deg)`;
     compassDisc.style.MozTransform = `rotate(${dir}deg)`;
+    const compassPointer = document.getElementById('pointer');
+    compassPointer.style.transform = `rotate(document.getElementById('req_azimuth').innerHTML)`;
+    compassPointer.style.webkitTransform = `rotate(document.getElementById('req_azimuth').innerHTML)`;
+    compassPointer.style.MozTransform = `rotate(document.getElementById('req_azimuth').innerHTML)`;
   }
 
 });
