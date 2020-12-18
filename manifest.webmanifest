@@ -1,0 +1,21 @@
+{
+  "name": "Dishpos Satellite Dish Positioner",
+  "short_name": "Dishpos",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color" : "#000000",
+"theme_color": "#000000",
+"icons": [{
+    "src": "icon_maskable.png",
+    "sizes": "1024x1024",
+"purpose": "maskable"
+  },{
+    "src": "icon_512.png",
+    "sizes": "512x512",
+"purpose": "any"
+  }],
+  "description": "A simple app to position your satellite dish",
+  "related_applications": [{
+    "platform": "Web"
+  }]
+}

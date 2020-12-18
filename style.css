@@ -1,45 +1,142 @@
 
-
-.diagram {
+@media (orientation: portrait) {
+	body {
+	 margin: 0;
+	 font-size: 6vw;
+}
+button {
+  padding: 2vw 4vw;
+  font-size: 4vw;
+  margin-bottom: 4vw;
+  border-radius: 2vw;
+  text-align: center;
+  }
+	#diagram {
   position: relative;
-  width: 260px;
-  height: 260px;
-  margin: 20px auto;
-  background: #222;
-  padding: 20px;
-  border-radius: 40px;
-  border: 5px solid #444;
-  overflow: hidden;
+  width: 100vw;
+  height: 70vw;
+}
+#text {
+	margin-top: 4vw;
+	margin-left: 4vw;
+}
+input {
+	font-size: 6vw;
+}
+.diagram_part {
+	position: absolute;
+ 
+  width: 70vw;
+  height: same-as-width;
+  margin-left: 15vw;
+  margin-right: 15vw;
+}
+h1 {
+text-align: center;
+font-size: 8vw;
+}
+}
+@media (orientation: landscape) {
+		body {
+	 margin: 0;
+	 font-size: 6vh;
+}
+button {
+  padding: 2vh 4vh;
+  font-size: 4vh;
+  margin-bottom: 4vh;
+  border-radius: 2vh;
+  text-align: center;
+  }
+input {
+	font-size: 6vh;
+}
+	#diagram {
+  position: relative;
+  width: 100vh;
+  height: 70vh;
+}
+#text {
+	margin-top: 4vh;
+	margin-left: 4vh;
 }
 
-.diagram .circle {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+.diagram_part {
+	position: absolute;
+ 
+  width: 70vh;
+  height: same-as-width;
+  margin: auto;
+}
+h1 {
+text-align: center;
+font-size: 8vh;
+}
+}
+body {
+	background: #000000;
+	 color: #dddddd;
+	 font-family: sans-serif;
+}
+button {
+  background-color: #d9150b;
+  border: none;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  }
+
+.circle {
+	fill:none;
+	stroke: #ffffff;
+	stroke-width:10;
+	stroke-linecap:butt;
+	stroke-linejoin:miter;
+	stroke-miterlimit:4;
+	stroke-dasharray:none;
+	stroke-opacity:1
+}
+.text_circle {
+	fill: #ffffff;
+	font-size: 60px;
+	font-style: normal;
+	font-family: sans-serif;
+}
+.text_satpointer {
+	fill: #ffffff;
+	font-size: 60px;
+	font-style: normal;
+	font-family: sans-serif;
+}
+.pointer {
+	fill:none;
+	stroke:#d9150b;
+	stroke-width:10;
+	stroke-linecap:butt;
+	stroke-linejoin:miter;
+	stroke-miterlimit:4;
+	stroke-dasharray:none;
+	stroke-opacity:1;
+}
+.satpointer {
+fill:none;
+stroke: #ffffff;
+stroke-width:10;
+stroke-linecap:butt;
+stroke-linejoin:miter;
+stroke-miterlimit:4;
+stroke-dasharray:none;
+stroke-opacity:1;
+}
+
+#circle {
   z-index: 200;
- 
-  width: 260px;
-  height: 260px;
-  background-size: 100%;
 }
 
-.diagram .pointer {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 201;
- 
-  width: 260px;
-  height: 260px;
-  background-size: 100%;
+#pointer {
+  z-index: 400;
 }
-.diagram .satpointer {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 201;
- 
-  width: 260px;
-  height: 260px;
-  background-size: 100%;
+#satpointer {
+  z-index: 300;
 }

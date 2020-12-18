@@ -1,31 +1,65 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>
-			Satellite Dish Positioner
-		</title>
-		<script type="text/javascript" src="dynamic.js"></script>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<h1>Satellite Dish Positioner</h1>
-		<div class="diagram" id='diagram'>
-			<img src="pointer.svg" class="pointer" id="pointer" />
-			<img src="circle.svg" class="circle" id="circle" />
-			<img src="sat.svg" class="satpointer" id="satpointer" />
-		</div>
-			<form id='userinput'>
-				<label for='satpos'>Satellite position (+ for E, - for W):</label>
-				<input type='text' id='satpos' name='satpos' onChange='recalculate()' /><br />
-      		<label for="latitude">Latitude:</label>
-      		<input type='text' id='latitude' name='latitude' onChange='recalculate()' /><br />
-      		<label for='longitude'>Longitude:</label>
-      		<input type='text' id='longitude' name='longitude' onChange='recalculate()' />
-      	</form>
-			Required Elevation: <span id="req_elevation"></span><br />
-			Required Azimuth: <span id="req_azimuth"></span><br />
-			Actual Azimuth: <span id="act_azimuth"></span>
-		<div id='notice'>
-		</div>
-	</body>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8' />
+     <meta name="theme-color" content="#000000"/>
+    <meta name='viewport' content="width=device-width, initial-scale=1.0" />
+    <meta name='description' content="A simple satellite dish position aid.
+    Makes it possible to calculate the required azimuth and elevation for a 
+    given satellite position and offers a tool for aligning the satellite dish to the calculated azimuth." />
+    <meta name='keywords' content='Satellite,Dish,Position' />
+    <title>Dishpos Satellite Dish Positioner </title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" /> 
+    <link rel="apple-touch-icon" href="icon_apple.png">
+
+
+</head>
+
+<body>
+    <h1>Satellite Dish Positioner</h1>
+    <main>
+    <div id='diagram'>
+            <svg  class='diagram_part' id="pointer" viewBox="0 0 1010 1010">
+                <path class='pointer' d="M 505,0 V 505" />
+            </svg>
+            <svg class='diagram_part'  id="circle" viewBox="0 0 1010 1010">
+                <path class='circle' d="M 0,505 H 50" />
+                <path class='circle' d="M 960,505 H 1010" />
+                <path class='circle' d="M 505,0 V 100" />
+                <path class='circle' d="M 505,960 V 1010" />
+                <text class='text_circle' x="482" y="150" >N</text>
+                <text class='text_circle' x="-325" y="-700" transform="rotate(180,100,100)" >S</text>
+                <text class='text_circle' x="485" y="-700" transform="rotate(90,100,100)" >E</text>
+                <text class='text_circle' x="-330" y="100" transform="rotate(270,100,100)" >W</text>
+                <circle class='circle' cy="505" cx="505" r="500" />
+            </svg>
+            <svg class='diagram_part' id="satpointer" viewBox="0 0 1010 1010">
+                <path class='satpointer' d="M 495,0 V 240" />
+                <path class='satpointer' d="M 515,0 V 240" />
+                <text class='text_satpointer' x="455" y="290" >SAT</text>
+            </svg>
+    </div>
+    <div id='text'>
+        <button type="button" id="calibrate">Calibrate Diagram</button>
+        <button type="button" id="fetch_location">Fetch Location</button>
+        <br />
+        <label for='satpos' id='satpos_label'>Satellite position:</label>
+        <input type='text' id='satpos'
+        name='satpos' value='19.2' />
+        <br /> Latitude: <span id="latitude"></span>
+        <br /> Longitude: <span id="longitude"></span>
+        <br /> Required Elevation: <span id="req_elevation"></span>
+        <br /> Required Azimuth: <span id="req_azimuth"></span>
+        <br /> Actual Azimuth: <span id="act_azimuth"></span>
+    </div>
+    <div id='notice-deviceorientation'>
+    </div>
+    <div id='notice-geolocation'> </div>
+    </main>
+</body>
+
 </html>
