@@ -1,5 +1,10 @@
 
 @media (orientation: portrait) {
+	footer {
+	margin-left: 4vw;
+	margin-top: 4vw;
+	font-size: 4vw;
+	}
 	body {
 	 margin: 0;
 	 font-size: 6vw;
@@ -37,6 +42,11 @@ font-size: 8vw;
 }
 }
 @media (orientation: landscape) {
+	footer {
+	margin-left: 4vh;
+	margin-top: 4vh;
+	font-size: 4vh;
+	}
 		body {
 	 margin: 0;
 	 font-size: 6vh;
@@ -139,4 +149,27 @@ stroke-opacity:1;
 }
 #satpointer {
   z-index: 300;
+}
+a:link {
+	 color: #dddddd;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:visited {
+	 color: #dddddd;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
 }
