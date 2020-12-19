@@ -1,8 +1,19 @@
 document.addEventListener('DOMContentLoaded', handleEvent);
-calibrationValue = 0;
+
 measuredValue = 0;
 longitude = 0;
 latitude = 0;
+
+const options = { frequency: 60, referenceFrame: 'device' };
+const sensor = new AbsoluteOrientationSensor(options);
+
+sensor.addEventListener('reading', handleOrientationEvent);
+sensor.addEventListener('error', error => {
+  if (event.error.name == 'NotReadableError') {
+    document.getElementById('notice-deviceorientation').innerHTML = "Sensor is not available.";
+  }
+});
+sensor.start();
 
 function handleEvent(event) {
 	if ('serviceWorker' in navigator) {
@@ -14,13 +25,7 @@ function handleEvent(event) {
     });
   });
 }
-	if (window.DeviceOrientationEvent) {
-		window.addEventListener('deviceorientation', handleOrientationEvent, false);
-	} else {
-		document.getElementById('notice-deviceorientation').innerHTML = 'Your device does not support the device orientation API'
-	}
 	document.getElementById('satpos').addEventListener("change", recalculate)
-	document.getElementById('calibrate').addEventListener("click", calibrate)
 	document.getElementById('fetch_location').addEventListener("click", fetchLocation)
 }
 function fetchLocation() {
@@ -30,9 +35,15 @@ function fetchLocation() {
 		document.getElementById('notice-geolocation').innerHTML = 'Your device does not support the geolocation API'
 	}
 }
-function handleOrientationEvent(eventData) {
-	measuredValue = eventData.alpha;
-	setActualAzimuth()
+function handleOrientationEvent() {
+var result =sensor.quaternion;
+ setOrientationData(calculateAzimuthFromQuaternion(result[0],result[1],result[2],result[3]))
+
+}
+function setOrientationData(angle) {
+	measuredValue = angle;
+	setActualAzimuth();
+
 }
 
 function handlePositionEvent(position) {
@@ -44,13 +55,9 @@ function handlePositionEvent(position) {
 	setActualAzimuth();
 }
 
-function calibrate() {
-	calibrationValue = measuredValue;
-	setActualAzimuth();
-}
 
 function setActualAzimuth() {
-	var dir = (calibrationValue - measuredValue + 360) % 360;
+	var dir = 360 - measuredValue;
 	document.getElementById('act_azimuth').innerHTML = Number.parseFloat(dir).toFixed(1);
 	var degrees = calculateAzimuth() - dir
 	document.getElementById('satpointer').style.transform = `rotate(${degrees}deg)`;
@@ -85,7 +92,14 @@ function calculateElevation() {
 	var elevation = Math.atan(tan_elevation)
 	return elevation * 180 / Math.PI
 }
+//gets the required angle for the azimuth from the quaternions
+function calculateAzimuthFromQuaternion(w,x,y,z) {
+    var sinr_cosp = 2 * (w * x + y * z);
+    var cosr_cosp = 1 - 2 * (x * x + y * y);
+    var roll = Math.atan2(sinr_cosp, cosr_cosp);
+    return (roll  * 180 / Math.PI +360)%360;
 
+}
 function recalculate() {
 	document.getElementById('req_elevation').innerHTML = Number.parseFloat(calculateElevation()).toFixed(2);
 	document.getElementById('req_azimuth').innerHTML = Number.parseFloat(calculateAzimuth()).toFixed(2);
