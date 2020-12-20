@@ -22,7 +22,10 @@ button {
   height: 70vw;
 }
 #text {
+
 	margin-top: 4vw;
+	}
+.textelement {
 	margin-left: 4vw;
 }
 input {
@@ -67,7 +70,10 @@ input {
   height: 70vh;
 }
 #text {
+
 	margin-top: 4vh;
+	}
+.textelement {
 	margin-left: 4vh;
 }
 
