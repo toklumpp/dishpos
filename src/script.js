@@ -21,7 +21,8 @@ function handleEvent(event) {
     navigator.serviceWorker.register('service_worker.js');
   });
 }
-	document.getElementById('satpos').addEventListener("change", recalculate)
+	document.getElementById('satpos_list').addEventListener("change", recalculate);
+	document.getElementById('satpos_text').addEventListener("change", recalculate);
 	document.getElementById('fetch_location').addEventListener("click", fetchLocation)
 }
 function fetchLocation() {
@@ -38,31 +39,19 @@ var result =sensor.quaternion;
 }
 function setOrientationData(angle) {
 	measuredValue = angle;
-	setActualAzimuth();
+	recalculate();
 
 }
 
 function handlePositionEvent(position) {
 	latitude = position.coords.latitude
 	longitude = position.coords.longitude
-	document.getElementById('longitude').innerHTML = Number.parseFloat(longitude).toFixed(3);
-	document.getElementById('latitude').innerHTML = Number.parseFloat(latitude).toFixed(3);
-	recalculate();
-	setActualAzimuth();
-}
-
-
-function setActualAzimuth() {
-	var dir = 360 - measuredValue;
-	document.getElementById('act_azimuth').innerHTML = Number.parseFloat(dir).toFixed(1);
-	var degrees = calculateAzimuth() - dir
-	document.getElementById('satpointer').style.transform = `rotate(${degrees}deg)`;
-	document.getElementById('circle').style.transform = `rotate(${-dir}deg)`;
 	recalculate();
 }
+
 
 function calculateAzimuth() {
-	var satpos = ((document.getElementById('satpos').value) * Math.PI / 180)
+	var satpos = (getSatposValue() * Math.PI / 180)
 	var longitudeRad = (longitude * Math.PI / 180)
 	var latitudeRad = (latitude * Math.PI / 180)
 	var difference = longitudeRad - satpos
@@ -78,7 +67,7 @@ function calculateAzimuth() {
 
 function calculateElevation() {
 	var elevation_const = 0.151;
-	var satpos = ((document.getElementById('satpos').value) * Math.PI / 180)
+	var satpos = (getSatposValue() * Math.PI / 180)
 	var longitudeRad = (longitude * Math.PI / 180)
 	var latitudeRad = (latitude * Math.PI / 180)
 	var difference = longitudeRad - satpos
@@ -96,7 +85,21 @@ function calculateAzimuthFromQuaternion(w,x,y,z) {
     return (roll  * 180 / Math.PI +360)%360;
 
 }
+function getSatposValue() {
+	var list_value = document.getElementById('satpos_list').value;
+	if(list_value == null) {
+		return document.getElementById('satpos_text').value;
+	} else {
+		return list_value;
+	}
+}
 function recalculate() {
+	var dir = 360 - measuredValue;
+	document.getElementById('act_azimuth').innerHTML = Number.parseFloat(dir).toFixed(1);
+	document.getElementById('satpointer').style.transform = `rotate(${calculateAzimuth() - dir}deg)`;
+	document.getElementById('circle').style.transform = `rotate(${-dir}deg)`;
+	document.getElementById('longitude').innerHTML = Number.parseFloat(longitude).toFixed(3);
+	document.getElementById('latitude').innerHTML = Number.parseFloat(latitude).toFixed(3);
 	document.getElementById('req_elevation').innerHTML = Number.parseFloat(calculateElevation()).toFixed(2);
 	document.getElementById('req_azimuth').innerHTML = Number.parseFloat(calculateAzimuth()).toFixed(2);
 }

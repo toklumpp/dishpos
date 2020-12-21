@@ -46,9 +46,14 @@
     <div class='textelement' id='text'>
         <button type="button" id="fetch_location">Fetch Location</button>
         <br />
-        <label for='satpos' id='satpos_label'>Satellite position:</label>
-        <input type='text' id='satpos'
-        name='satpos' value='19.2' />
+        <label for='satpos_list' id='satpos_label'>Satellite position:</label>
+<select name='satpos_list' id="satpos_list">
+  <option value='19.2'>Astra 1M/N/KR/L (19.2°E)</option>
+  <option value='4.8'>Astra 4A (4.8°E)</option>
+  <option value='null'>Other:</option>
+</select> <input type='text' id='satpos_text'
+        name='satpos_text' />
+
         <br /> Latitude: <span id="latitude"></span>
         <br /> Longitude: <span id="longitude"></span>
         <br /> Required Elevation: <span id="req_elevation"></span>
