@@ -18,11 +18,7 @@ sensor.start();
 function handleEvent(event) {
 	if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('sw.js').then(function(registration) {
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      console.log('ServiceWorker registration failed: ', err);
-    });
+    navigator.serviceWorker.register('service_worker.js');
   });
 }
 	document.getElementById('satpos').addEventListener("change", recalculate)
