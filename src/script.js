@@ -15,16 +15,22 @@ sensor.addEventListener('error', error => {
 });
 sensor.start();
 
+	
 function handleEvent(event) {
 	if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('service_worker.js');
   });
 }
+
 	document.getElementById('satpos_list').addEventListener("change", recalculate);
 	document.getElementById('satpos_text').addEventListener("change", recalculate);
-	document.getElementById('fetch_location').addEventListener("click", fetchLocation)
+	document.getElementById('fetch_location').addEventListener("click", fetchLocation);
+	recalculate();
+
 }
+
+	
 function fetchLocation() {
 		if ("geolocation" in navigator) {
 			navigator.geolocation.getCurrentPosition(handlePositionEvent);
