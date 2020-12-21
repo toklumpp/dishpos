@@ -31,6 +31,9 @@ button {
 input {
 	font-size: 6vw;
 }
+select {
+	font-size: 6vw;
+}
 .diagram_part {
 	position: absolute;
  
@@ -62,6 +65,9 @@ button {
   text-align: center;
   }
 input {
+	font-size: 6vh;
+}
+select {
 	font-size: 6vh;
 }
 	#diagram {
