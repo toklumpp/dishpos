@@ -16,6 +16,9 @@ button {
   border-radius: 2vw;
   text-align: center;
   }
+  .input_text {
+  border-radius: 1vw;
+  }
 	#diagram {
   position: relative;
   width: 100vw;
@@ -64,6 +67,9 @@ button {
   border-radius: 2vh;
   text-align: center;
   }
+  .input_text {
+  border-radius: 1vh;
+  }
 input {
 	font-size: 6vh;
 }
@@ -96,12 +102,12 @@ font-size: 8vh;
 }
 }
 body {
-	background: #000000;
-	 color: #dddddd;
+	background: #202125;
+	 color: #9ba0a6;
 	 font-family: sans-serif;
 }
 button {
-  background-color: #d9150b;
+  background-color: #ea4235;
   border: none;
   color: #ffffff;
   text-decoration: none;
@@ -111,7 +117,7 @@ button {
 
 .circle {
 	fill:none;
-	stroke: #ffffff;
+	stroke: #e9eaee;
 	stroke-width:10;
 	stroke-linecap:butt;
 	stroke-linejoin:miter;
@@ -120,20 +126,20 @@ button {
 	stroke-opacity:1
 }
 .text_circle {
-	fill: #ffffff;
+	fill: #e9eaee;
 	font-size: 60px;
 	font-style: normal;
 	font-family: sans-serif;
 }
 .text_satpointer {
-	fill: #ffffff;
+	fill: #e9eaee;
 	font-size: 60px;
 	font-style: normal;
 	font-family: sans-serif;
 }
 .pointer {
 	fill:none;
-	stroke:#d9150b;
+	stroke: #ea4235;
 	stroke-width:10;
 	stroke-linecap:butt;
 	stroke-linejoin:miter;
@@ -143,7 +149,7 @@ button {
 }
 .satpointer {
 fill:none;
-stroke: #ffffff;
+stroke: #e9eaee;
 stroke-width:10;
 stroke-linecap:butt;
 stroke-linejoin:miter;
@@ -151,7 +157,6 @@ stroke-miterlimit:4;
 stroke-dasharray:none;
 stroke-opacity:1;
 }
-
 #circle {
   z-index: 200;
 }
@@ -162,26 +167,37 @@ stroke-opacity:1;
 #satpointer {
   z-index: 300;
 }
+.variable_text {
+	color: #e9eaee;
+	background-color: inherit;
+	border: 0;
+}
+h1 {
+color: #e9eaee;
+}
+.input_text {
+background-color: #303135;
+}
 a:link {
-	 color: #dddddd;
+	 color: inherit;
   background-color: transparent;
   text-decoration: underline;
 }
 
 a:visited {
-	 color: #dddddd;
+	 color: inherit;
   background-color: transparent;
   text-decoration: underline;
 }
 
 a:hover {
-  color: red;
+  color: #ea4235;
   background-color: transparent;
   text-decoration: underline;
 }
 
 a:active {
-  color: red;
+  color: #ea4235;
   background-color: transparent;
   text-decoration: underline;
 }

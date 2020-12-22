@@ -20,8 +20,8 @@
 </head>
 
 <body>
-    <h1>Satellite Dish Positioner</h1>
     <main>
+    <h1>Satellite Dish Positioner</h1>
     <div id='diagram'>
             <svg  class='diagram_part' id="pointer" viewBox="0 0 1010 1010">
                 <path class='pointer' d="M 505,0 V 505" />
@@ -47,18 +47,18 @@
         <button type="button" id="fetch_location">Fetch Location</button>
         <br />
         <label for='satpos_list' id='satpos_label'>Sat:</label>
-<select name='satpos_list' id="satpos_list">
-  <option value='19.2'>Astra 1M/N/KR/L (19.2°E)</option>
-  <option value='4.8'>Astra 4A (4.8°E)</option>
+<select class='variable_text input_text' name='satpos_list' id="satpos_list">
+  <option value='19.2'>Astra 1M/N/KR/L</option>
+  <option value='4.8'>Astra 4A</option>
   <option value='other'>Other:</option>
-</select> <input type='text' id='satpos_text'
-        name='satpos_text' />
+</select> <input class='variable_text input_text' type='text' id='satpos_text'
+        name='satpos_text' placeholder='Orbital Position' />°E
 
-        <br /> Latitude: <span id="latitude"></span>
-        <br /> Longitude: <span id="longitude"></span>
-        <br /> Required Elevation: <span id="req_elevation"></span>
-        <br /> Required Azimuth: <span id="req_azimuth"></span>
-        <br /> Actual Azimuth: <span id="act_azimuth"></span>
+        <br /> Latitude: <span class='variable_text' id="latitude"></span>
+        <br /> Longitude: <span class='variable_text' id="longitude"></span>
+        <br /> Required Elevation: <span class='variable_text' id="req_elevation"></span>
+        <br /> Required Azimuth: <span class='variable_text' id="req_azimuth"></span>
+        <br /> Actual Azimuth: <span class='variable_text' id="act_azimuth"></span>
     </div>
     <div class='textelement' id='notice-deviceorientation'>
     </div>
