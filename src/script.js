@@ -93,7 +93,7 @@ function calculateAzimuthFromQuaternion(w,x,y,z) {
 }
 function getSatposValue() {
 	var list_value = document.getElementById('satpos_list').value;
-	if(list_value == null) {
+	if(list_value == 'other') {
 		return document.getElementById('satpos_text').value;
 	} else {
 		return list_value;
