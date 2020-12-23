@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='en' xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset='utf-8' />
@@ -9,12 +9,14 @@
     Makes it possible to calculate the required azimuth and elevation for a 
     given satellite position and offers a tool for aligning the satellite dish to the calculated azimuth." />
     <meta name='keywords' content='Satellite,Dish,Position' />
+    <meta name="copyright" content="Tobias Klumpp" />
+	<meta name="author" content="Tobias Klumpp" />
     <title>Dishpos Satellite Dish Positioner </title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" href="icon.svg" type="image/svg+xml" /> 
-    <link rel="apple-touch-icon" href="icon_apple.png">
+    <link rel="apple-touch-icon" href="icon_apple.png" />
 
 
 </head>
@@ -23,10 +25,10 @@
     <main>
     <h1>Satellite Dish Positioner</h1>
     <div id='diagram'>
-            <svg  class='diagram_part' id="pointer" viewBox="0 0 1010 1010">
+          <svg  xmlns="http://www.w3.org/2000/svg" class='diagram_part' id="pointer" viewBox="0 0 1010 1010">
                 <path class='pointer' d="M 505,0 V 505" />
             </svg>
-            <svg class='diagram_part'  id="circle" viewBox="0 0 1010 1010">
+            <svg xmlns="http://www.w3.org/2000/svg" class='diagram_part'  id="circle" viewBox="0 0 1010 1010">
                 <path class='circle' d="M 0,505 H 50" />
                 <path class='circle' d="M 960,505 H 1010" />
                 <path class='circle' d="M 505,0 V 100" />
@@ -37,7 +39,7 @@
                 <text class='text_circle' x="-330" y="100" transform="rotate(270,100,100)" >W</text>
                 <circle class='circle' cy="505" cx="505" r="500" />
             </svg>
-            <svg class='diagram_part' id="satpointer" viewBox="0 0 1010 1010">
+            <svg xmlns="http://www.w3.org/2000/svg" class='diagram_part' id="satpointer" viewBox="0 0 1010 1010">
                 <path class='satpointer' d="M 495,0 V 240" />
                 <path class='satpointer' d="M 515,0 V 240" />
                 <text class='text_satpointer' x="455" y="290" >SAT</text>
@@ -48,8 +50,8 @@
         <br />
         <label for='satpos_list' id='satpos_label'>Sat:</label>
 <select class='variable_text input_text' name='satpos_list' id="satpos_list">
-  <option value='19.2'>Astra 1M/N/KR/L</option>
-  <option value='4.8'>Astra 4A</option>
+  <option value='19.2'>Astra 1KR/1L/1M/1N</option>
+  <option value='13.0'>Hot Bird 13B/13C/13E</option>
   <option value='other'>Other:</option>
 </select> <input class='variable_text input_text' type='text' id='satpos_text'
         name='satpos_text' placeholder='Orbital Position' />°E
