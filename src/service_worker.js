@@ -8,7 +8,6 @@ const CACHE_URLS = [
   '/style.css',
   '/script.js',
   '/icon.svg',
-  '/icon_512.png',
   '/icon_apple.png',
   '/icon_maskable.png',
   '/manifest.json'

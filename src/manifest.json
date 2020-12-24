@@ -10,7 +10,7 @@
     "sizes": "1024x1024",
 "purpose": "maskable"
   },{
-    "src": "icon_512.png",
+    "src": "icon.svg",
     "sizes": "512x512",
 "purpose": "any"
   }],

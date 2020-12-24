@@ -107,7 +107,7 @@ body {
 	 font-family: sans-serif;
 }
 button {
-  background-color: #ea4235;
+  background-color: #d93d31;
   border: none;
   color: #ffffff;
   text-decoration: none;
@@ -139,7 +139,7 @@ button {
 }
 .pointer {
 	fill:none;
-	stroke: #ea4235;
+	stroke: #d93d31;
 	stroke-width:10;
 	stroke-linecap:butt;
 	stroke-linejoin:miter;
@@ -191,13 +191,13 @@ a:visited {
 }
 
 a:hover {
-  color: #ea4235;
+  color: #d93d31;
   background-color: transparent;
   text-decoration: underline;
 }
 
 a:active {
-  color: #ea4235;
+  color: #d93d31;
   background-color: transparent;
   text-decoration: underline;
 }
