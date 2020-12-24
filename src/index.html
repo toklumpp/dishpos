@@ -12,7 +12,7 @@
     <meta name="copyright" content="Tobias Klumpp" />
 	<meta name="author" content="Tobias Klumpp" />
     <title>Dishpos Satellite Dish Positioner </title>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" href="icon.svg" type="image/svg+xml" /> 
@@ -50,11 +50,11 @@
         <br />
         <label for='satpos_list' id='satpos_list_label'>Sat:</label>
 <select class='variable_text input_text' name='satpos_list' id="satpos_list">
-  <option value='19.2'>Astra 1KR/1L/1M/1N</option>
+  <option value='19.2' selected='true'>Astra 1KR/1L/1M/1N</option>
   <option value='13.0'>Hot Bird 13B/13C/13E</option>
   <option value='other'>Other:</option>
 </select> <label for='satpos_text' id='satpos_text_label'>Pos:</label><input class='variable_text input_text' type='text' id='satpos_text'
-        name='satpos_text' placeholder='Orbital Position' />°E
+        name='satpos_text' placeholder='Orbital Position'  value='19.2' disabled='true'/>°E
 
         <br /> Latitude: <span class='variable_text' id="latitude"></span>
         <br /> Longitude: <span class='variable_text' id="longitude"></span>

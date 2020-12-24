@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Roboto;
+  src: url(fonts/Roboto-Medium.ttf);
+}
 
 @media (orientation: portrait) {
 	footer {
@@ -104,7 +108,7 @@ font-size: 8vh;
 body {
 	background: #202125;
 	 color: #9ba0a6;
-	 font-family: sans-serif;
+	 font-family: Roboto;
 }
 button {
   background-color: #d93d31;
@@ -129,13 +133,13 @@ button {
 	fill: #e9eaee;
 	font-size: 60px;
 	font-style: normal;
-	font-family: sans-serif;
+	font-family: Roboto;
 }
 .text_satpointer {
 	fill: #e9eaee;
 	font-size: 60px;
 	font-style: normal;
-	font-family: sans-serif;
+	font-family: Roboto;
 }
 .pointer {
 	fill:none;
