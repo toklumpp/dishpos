@@ -11,7 +11,7 @@ const CACHE_URLS = [
   '/icon_512.png',
   '/icon_apple.png',
   '/icon_maskable.png',
-  '/manifest.webmanifest'
+  '/manifest.json'
 ];
 
 self.addEventListener('install', install);
