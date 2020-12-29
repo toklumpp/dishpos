@@ -11,7 +11,7 @@ const CACHE_URLS = [
   '/icon_apple.png',
   '/icon_maskable.png',
   '/manifest.json',
-  'fonts/Roboto-Regular.ttf'
+  '/fonts/Roboto-Regular.ttf'
 ];
 
 self.addEventListener('install', install);
