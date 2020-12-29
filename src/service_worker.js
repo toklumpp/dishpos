@@ -1,4 +1,4 @@
-const CACHE_TAG = 'static-v0.0.1-dev9';
+const CACHE_TAG = 'static-v0.0.1-dev10';
 
 const CACHE_URLS = [
   '/',
@@ -10,7 +10,8 @@ const CACHE_URLS = [
   '/icon.svg',
   '/icon_apple.png',
   '/icon_maskable.png',
-  '/manifest.json'
+  '/manifest.json',
+  'fonts/Roboto-Regular.ttf'
 ];
 
 self.addEventListener('install', install);
