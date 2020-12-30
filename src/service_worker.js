@@ -1,4 +1,4 @@
-const CACHE_TAG = 'static-v0.0.1-dev10';
+const CACHE_TAG = 'static-v0.0.1-dev11';
 
 const CACHE_URLS = [
   '/',
