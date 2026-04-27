@@ -1,10 +1,8 @@
-const CACHE_TAG = 'v0.0.3';
+const CACHE_TAG = 'v0.0.4';
 
 const CACHE_URLS = [
   '/',
   '/index.html',
-  '/legal_de.html',
-  '/legal_en.html',
   '/style.css',
   '/script.js',
   '/icon.svg',
